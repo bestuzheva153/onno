@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/subscriptions
+    driver-class-name: org.h2.Driver
+    username: sa
+  h2:
+    console:
+      enabled: true
+  application:
+    name: onno-subscriptions
+
+onno:
+  schema:
+    mode: apply
+  repository:
+    deletion-check: strict
+  auth:
+    session:
+      remember-me:
+        key: dev-subscriptions-remember-me-key-change-before-production
+    users:
+      - username: admin
+        password: admin
+        roles: [ADMIN]
