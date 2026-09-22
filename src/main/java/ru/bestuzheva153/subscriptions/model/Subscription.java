@@ -38,6 +38,9 @@ public class Subscription extends DocumentObject implements Postable, OnFillingH
     @Attribute(displayName = "Итого", required = true, precision = 15, scale = 2, min = 0)
     private BigDecimal totalAmount = BigDecimal.ZERO;
 
+    @Attribute(displayName = "Причина отмены", length = 500)
+    private String cancellationReason;
+
     @TabularSection(name = "lines")
     private List<SubscriptionLine> lines = new ArrayList<>();
 
@@ -186,6 +189,14 @@ public class Subscription extends DocumentObject implements Postable, OnFillingH
 
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
+    }
+
+    public String getCancellationReason() {
+        return cancellationReason;
+    }
+
+    public void setCancellationReason(String cancellationReason) {
+        this.cancellationReason = cancellationReason;
     }
 
     public List<SubscriptionLine> getLines() {
