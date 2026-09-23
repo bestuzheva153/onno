@@ -52,7 +52,7 @@ class SubscriptionCalculationTest {
         assertThat(line.getPrice()).isEqualByComparingTo("100.00");
         assertThat(line.getAmount()).isEqualByComparingTo("300.00");
         assertThat(subscription.getTotalAmount()).isEqualByComparingTo("300.00");
-        assertThat(subscription.getEndDate()).isEqualTo(LocalDate.of(2026, 4, 5));
+        assertThat(subscription.getEndDate()).isEqualTo(LocalDate.of(2026, 4, 4));
     }
 
     @Test
@@ -74,6 +74,6 @@ class SubscriptionCalculationTest {
         assertThat(subscription.getTotalAmount()).isEqualByComparingTo("700.00");
         assertThat(subscription.getLines().get(0).getAmount()).isEqualByComparingTo("200.00");
         assertThat(subscription.getLines().get(1).getAmount()).isEqualByComparingTo("500.00");
-        assertThat(subscription.getEndDate()).isEqualTo(LocalDate.of(2027, 2, 1));
+        assertThat(subscription.getEndDate()).isEqualTo(LocalDate.of(2027, 1, 31));
     }
 }

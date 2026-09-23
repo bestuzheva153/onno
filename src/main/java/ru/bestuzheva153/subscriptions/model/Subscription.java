@@ -131,7 +131,7 @@ public class Subscription extends DocumentObject implements Postable, OnFillingH
 
         totalAmount = total;
         if (startDate != null && maxDays > 0) {
-            endDate = startDate.plusDays(maxDays);
+            endDate = startDate.plusDays(maxDays - 1L);
         }
     }
 
